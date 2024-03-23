@@ -1,0 +1,41 @@
+Zapier AI Code for DealerShip Info
+workflow.zapierSuccess = false
+const leadData = {
+name: workflow.name,
+email: workflow.email,
+phone: workflow.phone,
+apiResponse: workflow.apiResponse,
+apiResponse2: workflow.apiResponse2,
+carwant1: workflow.carwant1,
+carwant2: workflow.carwant2,
+}
+// Replace YOUR_ZAPIER_URL_HERE with your zapier webhook url
+try {
+const response = await
+axios.post('https://hooks.zapier.com/hooks/catch/16012724/31o51eh/', leadData)
+console.log(response.data)
+workflow.zapierSuccess = true
+} catch (error) {
+console.error(error)
+}
+Zapier AI Code for Booking
+workflow.zapierSuccess = false
+const leadData = {
+name: workflow.name,
+email: workflow.email,
+phone: workflow.phone,
+apiResponse: workflow.apiResponse,
+apiResponse2: workflow.apiResponse2,
+carwant1: workflow.carwant1,
+carwant2: workflow.carwant2,
+date: workflow.date,
+}
+// Replace YOUR_ZAPIER_URL_HERE with your zapier webhook url
+try {
+const response = await
+axios.post('https://hooks.zapier.com/hooks/catch/16012724/31o51eh/', leadData)
+console.log(response.data)
+workflow.zapierSuccess = true
+} catch (error) {
+console.error(error)
+}
