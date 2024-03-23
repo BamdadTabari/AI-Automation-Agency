@@ -1,0 +1,38 @@
+Stack AI Code
+For carwant1: // Add your stack AI endpoint URL in place of
+"YOUR_STACK_AI_ENDPOINT_URL"
+const endpoint = "YOUR_STACK_AI_ENDPOINT_URL"
+// Add your stack AI API key in place of "YOUR_API_KEY_HERE"
+const headers = {
+Authorization: `Bearer YOUR_API_KEY_HERE`,
+"Content-Type": "application/json"
+}
+const data = {
+"in-0": workflow.carwant1,
+}
+try {
+const response = await axios.post(endpoint, data, { headers })
+workflow.apiResponse = response.data["out-0"]
+} catch (error) {
+throw new Error(`stack-error: ${error}`)
+}
+For carwant2: // Add your stack AI endpoint URL in place of
+"YOUR_STACK_AI_ENDPOINT_URL"
+const endpoint = "YOUR_STACK_AI_ENDPOINT_URL"
+// Add your stack AI API key in place of "YOUR_API_KEY_HERE"
+const headers = {
+Authorization: `Bearer YOUR_API_KEY_HERE`,
+"Content-Type": "application/json"
+}
+//To Concatenate to variable
+const combinedcarwant = workflow.carwant1 + ". Now considering this modification:" +
+workflow.carwant2;
+const data = {
+"in-0": combinedcarwant,
+}
+try {
+const response = await axios.post(endpoint, data, { headers })
+workflow.apiResponse = response.data["out-0"]
+} catch (error) {
+throw new Error(`stack-error: ${error}`)
+}
